@@ -1,5 +1,5 @@
 println "test"
 
-evaluate(new File("./scripts/utils.groovy"))
+def util = evaluate(new File("./scripts/utils.groovy"))
 
-todo()
+util.todo()
