@@ -1,5 +1,5 @@
 println "test"
 
-def deploymentUtil = load("./utils.groovy")
+def util = load("./utils.groovy")
 
-todo()
+util.todo()
