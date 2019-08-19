@@ -25,7 +25,7 @@ pipeline {
                         def serverIp = getServerIp(env.BRANCH_NAME)
                         def serverName = getServerName(env.BRANCH_NAME)
                         echo "Deploying to " + serverName + " - " + serverIp
-                        sh("pwd")
+                        sh("pwd; ls -l")
                         sh("bash ./jenkinsTestScripts/scripts/jenkins/deploy.sh ${serverIp} ${serverName}")
                     } else {
                         echo 'This is a feature branch, will not be deployed to environment'
