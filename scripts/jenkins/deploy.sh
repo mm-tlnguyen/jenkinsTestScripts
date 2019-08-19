@@ -14,11 +14,11 @@ migrate () {
 doDeploy () {
 	serverIp=$1
 	serverName=$2
-	shouldMigrate=$3
+	shouldNotMigrate=$3
   
 	echo "Deploying"
 
-	if ! [ -z "$shouldMigrate" ]; then
+	if [ -z "$shouldNotMigrate" ]; then
 		migrate
 	fi
 
@@ -41,7 +41,7 @@ doDeploy () {
 
 SERVER_IP=$1
 SERVER_NAME=$2
-SHOULD_MIGRATE=$3
+SHOULD_NOT_MIGRATE=$3
 
-doDeploy $SERVER_IP $SERVER_NAME $SHOULD_MIGRATE
+doDeploy $SERVER_IP $SERVER_NAME $SHOULD_NOT_MIGRATE
 
