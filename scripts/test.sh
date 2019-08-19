@@ -1,3 +1,5 @@
-echo "FROM tes.sh"
+echo "FROM test.sh"
 
-bash ./util.sh
+pwd
+
+bash ./scripts/util.sh
