@@ -24,6 +24,14 @@ doDeploy () {
 
 	pwd
 
+	cd ./scripts/jenkins
+	
+	pwd
+	
+	cd ../..
+	
+	pwd
+	
 	updateService $serverIp $serverName 'service-1'
 	updateService $serverIp $serverName 'service-2'
 	updateService $serverIp $serverName 'service-3'
