@@ -3,13 +3,12 @@
 updateService () {
 	serverIp=$1
 	serverName=$2
-	serviceName=$3
-  
-  echo "Updating service $serverIp - $serverName - $serviceName"
+	serviceName=$3  
+	echo "Updating service $serverIp - $serverName - $serviceName"
 }
 
 migrate () {
-  echo "Migrating"  
+	echo "Migrating"  
 }
 
 doDeploy () {
@@ -17,15 +16,19 @@ doDeploy () {
 	serverName=$2
 	shouldMigrate=$3
   
-  echo "Deploying"
-  
-  if ! [ -z "$shouldMigrate" ]; then
-    migrate
-  fi
+	echo "Deploying"
 
-  pwd
+	if ! [ -z "$shouldMigrate" ]; then
+		migrate
+	fi
 
-  echo "Done"
+	pwd
+
+	updateService $serverIp $serverName 'service-1'
+	updateService $serverIp $serverName 'service-2'
+	updateService $serverIp $serverName 'service-3'
+    
+	echo "Done"
 }
 
 SERVER_IP=$1
