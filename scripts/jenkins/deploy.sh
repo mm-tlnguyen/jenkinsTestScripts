@@ -8,7 +8,10 @@ updateService () {
 }
 
 migrate () {
-	echo "Migrating"  
+	echo "Migrating"
+	if [ "$serverName" == "prod" ]; then
+       		echo "Migrating on PROD"
+    	fi
 }
 
 doDeploy () {
