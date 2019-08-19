@@ -5,7 +5,7 @@ pipeline {
         stage ("Checkout SCM and test tools") {
            steps {
               checkout scm
-                echo 'Checkout scm
+                echo 'Checkout scm'
            }
         }
         stage('Build') {
